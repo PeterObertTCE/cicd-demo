@@ -1,0 +1,159 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "RATES_SERVICE_CBUAE_DATE",
+    "version" : "01.00.0000"
+  },
+  "servers" : [ {
+    "url" : "https://teamoic3-frrnyzlwrqhn-fr.integration.eu-frankfurt-1.ocp.oraclecloud.com/ic/api/integration/v2/flows/rest/project/POB_SIMPLERPA_SITETOLIST/RATES_SERVICE_CBUAE_DATE/1.0"
+  } ],
+  "paths" : {
+    "/CB_UAE_Rates" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "date",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "500" : {
+            "description" : "Faults",
+            "content" : { }
+          },
+          "default" : {
+            "description" : "A sample description of the Response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/response-wrapper"
+                },
+                "example" : "{\"rates\":[{\"currencyName\":\"USD\",\"rate\":\"0.345\"},{\"currencyName\":\"EUR\",\"rate\":\"0.346\"}],\"rateLines\":[\"somerate 0.222\",\"somerate2 0.3222\"],\"allRatesUnparsed\":\"everything like 0.3333\"}"
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "oauth2Authentication" : [ ]
+        }, {
+          "basicAuthentication" : [ ]
+        } ]
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "response-wrapper" : {
+        "required" : [ "allRatesUnparsed", "rateLines", "rates" ],
+        "type" : "object",
+        "properties" : {
+          "rates" : {
+            "minItems" : 1,
+            "type" : "array",
+            "items" : {
+              "required" : [ "currencyName", "rate" ],
+              "type" : "object",
+              "properties" : {
+                "currencyName" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "rate" : {
+                  "type" : "string",
+                  "example" : null
+                }
+              },
+              "example" : null
+            }
+          },
+          "allRatesUnparsed" : {
+            "type" : "string",
+            "example" : null
+          },
+          "rateLines" : {
+            "minItems" : 1,
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : null
+            }
+          }
+        },
+        "example" : "{\"rates\":[{\"currencyName\":\"USD\",\"rate\":\"0.345\"},{\"currencyName\":\"EUR\",\"rate\":\"0.346\"}],\"rateLines\":[\"somerate 0.222\",\"somerate2 0.3222\"],\"allRatesUnparsed\":\"everything like 0.3333\"}"
+      },
+      "APIInvocationError" : {
+        "required" : [ "detail", "errorCode", "errorDetails", "title", "type" ],
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "example" : null
+          },
+          "title" : {
+            "type" : "string",
+            "example" : null
+          },
+          "detail" : {
+            "type" : "string",
+            "example" : null
+          },
+          "errorCode" : {
+            "type" : "string",
+            "example" : null
+          },
+          "errorDetails" : {
+            "minItems" : 1,
+            "type" : "array",
+            "items" : {
+              "required" : [ "errorCode", "errorPath", "instance", "title", "type" ],
+              "type" : "object",
+              "properties" : {
+                "type" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "instance" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "title" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "errorPath" : {
+                  "type" : "string",
+                  "example" : null
+                },
+                "errorCode" : {
+                  "type" : "string",
+                  "example" : null
+                }
+              },
+              "example" : null
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "oauth2Authentication" : {
+        "type" : "oauth2",
+        "flows" : {
+          "authorizationCode" : {
+            "authorizationUrl" : "https://idcs-5ba32fa3496f48289532f8fc10f47032.identity.oraclecloud.com:443/oauth2/v1/authorize",
+            "tokenUrl" : "https://idcs-5ba32fa3496f48289532f8fc10f47032.identity.oraclecloud.com:443/oauth2/v1/token",
+            "scopes" : {
+              "https://teamoic3-frrnyzlwrqhn-fr.integration.eu-frankfurt-1.ocp.oraclecloud.comurn:opc:resource:consumer::all" : "all"
+            }
+          }
+        }
+      },
+      "basicAuthentication" : {
+        "type" : "http",
+        "scheme" : "basic"
+      }
+    }
+  },
+  "x-original-swagger-version" : "2.0"
+}
