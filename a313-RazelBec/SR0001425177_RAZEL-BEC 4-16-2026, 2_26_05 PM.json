@@ -1,0 +1,236 @@
+{
+  "label": "SR0001425177_RAZEL-BEC",
+  "timeFrame": {
+    "months": 1,
+    "from": null,
+    "to": null,
+    "leapYear": [],
+    "calculation": "simple"
+  },
+  "currency": "USD",
+  "meta": {
+    "exportVersion": 1,
+    "dataBuildID": {
+      "buildDate": "2026-04-01T10:03:25Z",
+      "buildNumber": "357",
+      "instance": "CCE-PUBLIC-PROD",
+      "realm": "public",
+      "serviceType": "paas"
+    },
+    "hash": "91837ba3f10277580f1615a22362d8ee"
+  },
+  "configs": [
+    {
+      "label": "Application Integration",
+      "customLabel": "OIC non-PROD",
+      "customNote": "Non Production environments type for development and/or testing and/or quality assurance",
+      "services": [
+        {
+          "id": 1285,
+          "label": "Application Integration - OIC",
+          "utilization": {
+            "instances": 1,
+            "hours": 12,
+            "days": 31,
+            "hoursPerMonth": 372,
+            "foreignInstanceMultiplier": {
+              "value": 1,
+              "description": ""
+            },
+            "localInstanceMultiplier": {
+              "value": 1,
+              "description": ""
+            }
+          },
+          "items": [
+            {
+              "sku": "B109559",
+              "quantity": 0,
+              "inPreset": true,
+              "unitPrice": 1.9355,
+              "monthlyCost": 0
+            },
+            {
+              "sku": "B89639",
+              "quantity": 0,
+              "inPreset": true,
+              "unitPrice": 0.6452,
+              "monthlyCost": 0
+            },
+            {
+              "sku": "B89640",
+              "quantity": 1,
+              "inPreset": true,
+              "unitPrice": 1.2903,
+              "monthlyCost": 479.99
+            },
+            {
+              "sku": "B89643",
+              "quantity": 0,
+              "inPreset": true,
+              "unitPrice": 0.3226,
+              "monthlyCost": 0
+            },
+            {
+              "sku": "B89644",
+              "quantity": 0,
+              "inPreset": true,
+              "unitPrice": 0.3226,
+              "monthlyCost": 0
+            }
+          ],
+          "uiState": {
+            "peakDailyVolume": 1,
+            "concurrentFiles": 5,
+            "maxFileBatchSize": 1,
+            "serviceSettingsState": [
+              {
+                "value": "peakVolume",
+                "selected": [
+                  "peakVolume"
+                ],
+                "visible": true
+              },
+              {
+                "value": "processingType",
+                "selected": [
+                  "processingType"
+                ],
+                "visible": true
+              },
+              {
+                "value": "concurrentFilesInHour",
+                "selected": [
+                  "concurrentFilesInHour"
+                ],
+                "visible": true
+              },
+              {
+                "value": "transactionsPerDay",
+                "selected": [],
+                "visible": false
+              },
+              {
+                "value": "disasterRecovery",
+                "selected": [],
+                "visible": true
+              }
+            ],
+            "licenseType": 0,
+            "licenseEdition": 1
+          },
+          "presetID": 721,
+          "isFromShape": false
+        }
+      ],
+      "addBySearch": false
+    },
+    {
+      "label": "Application Integration",
+      "customLabel": "PROD Environment",
+      "customNote": "Assumption \n10 documents per year per 3500 users (35k docs)\nExpected to store and interact with HCM and store extract JSON to/from DB/Object Storage – JSON information expected 50kB ",
+      "services": [
+        {
+          "id": 1285,
+          "label": "Application Integration - OIC",
+          "utilization": {
+            "instances": 1,
+            "hours": 24,
+            "days": 31,
+            "hoursPerMonth": 744,
+            "foreignInstanceMultiplier": {
+              "value": 1,
+              "description": ""
+            },
+            "localInstanceMultiplier": {
+              "value": 1,
+              "description": ""
+            }
+          },
+          "items": [
+            {
+              "sku": "B109559",
+              "quantity": 0,
+              "inPreset": true,
+              "unitPrice": 1.9355,
+              "monthlyCost": 0
+            },
+            {
+              "sku": "B89639",
+              "quantity": 0,
+              "inPreset": true,
+              "unitPrice": 0.6452,
+              "monthlyCost": 0
+            },
+            {
+              "sku": "B89640",
+              "quantity": 2,
+              "inPreset": true,
+              "unitPrice": 1.2903,
+              "monthlyCost": 1919.97
+            },
+            {
+              "sku": "B89643",
+              "quantity": 0,
+              "inPreset": true,
+              "unitPrice": 0.3226,
+              "monthlyCost": 0
+            },
+            {
+              "sku": "B89644",
+              "quantity": 0,
+              "inPreset": true,
+              "unitPrice": 0.3226,
+              "monthlyCost": 0
+            }
+          ],
+          "uiState": {
+            "peakDailyVolume": 1,
+            "concurrentFiles": 5,
+            "maxFileBatchSize": 1,
+            "serviceSettingsState": [
+              {
+                "value": "peakVolume",
+                "selected": [
+                  "peakVolume"
+                ],
+                "visible": true
+              },
+              {
+                "value": "processingType",
+                "selected": [
+                  "processingType"
+                ],
+                "visible": true
+              },
+              {
+                "value": "concurrentFilesInHour",
+                "selected": [
+                  "concurrentFilesInHour"
+                ],
+                "visible": true
+              },
+              {
+                "value": "transactionsPerDay",
+                "selected": [],
+                "visible": false
+              },
+              {
+                "value": "disasterRecovery",
+                "selected": [
+                  "disasterRecovery"
+                ],
+                "visible": true
+              }
+            ],
+            "licenseType": 0,
+            "licenseEdition": 1
+          },
+          "presetID": 721,
+          "isFromShape": false
+        }
+      ],
+      "addBySearch": false
+    }
+  ]
+}
